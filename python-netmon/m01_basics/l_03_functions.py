@@ -41,11 +41,12 @@ def create_devices(num_devices=1, num_subnets=1):
 
             # add device to the list of devices
             created_devices.append(device)
-
-    return created_devices
+    sum_devices = num_devices * num_subnets
+    return created_devices, sum_devices
 
 
 if __name__ == '__main__':
 
-    devices = create_devices(10, 2)
+    devices, count = create_devices(num_devices=10, num_subnets=2)
     print("\n", tabulate(devices, headers="keys"))
+    print(f"\nTotal: {count} devices created")
